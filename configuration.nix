@@ -9,24 +9,28 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-  ## environment.pathsToLink = [ "/libexec" ];
+  # environment.pathsToLink = [ "/libexec" ];
+
+  boot.loader.grub.enable = true;
+  boot.loader.grub.version = 2;
+  boot.loader.grub.device = "/dev/sda";
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
 
-  ## boot.kernelParams = [
-  ##   "console=ttyS0,115200"
-  ##   "console=tty1"
-  ##   "console=tty2"
-  ## ];
+  # boot.kernelParams = [
+  #   "console=ttyS0,115200"
+  #   "console=tty1"
+  #   "console=tty2"
+  # ];
 
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
 
-  ## networking.hostName = "mark_nixos"; # Define your hostname.
-  ## networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  ## networking.wireless.networks.Mark_wifi_5G.psk = "67680702_mscr";
-  ## networking.wireless.interfaces = [ "wlp4s0" ];
+  # networking.hostName = "mark_nixos"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.networks.Mark_wifi_5G.psk = "67680702_mscr";
+  # networking.wireless.interfaces = [ "wlp4s0" ];
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
@@ -35,8 +39,7 @@
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-  # networking.interfaces.enp5s0.useDHCP = true;
-  # networking.interfaces.wlp4s0.useDHCP = true;
+  networking.interfaces.ens33.useDHCP = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -147,5 +150,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "21.05"; # Did you read the comment?
-
 }
