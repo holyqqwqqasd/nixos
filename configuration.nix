@@ -96,7 +96,7 @@
     support32Bit = true;
     package = pkgs.pulseaudioFull;
   };
-  security.rtkit.enable = true;
+  # security.rtkit.enable = true;
   # services.pipewire = {
   #   enable = true;
   #   alsa = {
