@@ -11,7 +11,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-  # environment.pathsToLink = [ "/libexec" ];
+  environment.pathsToLink = [ "/libexec" ];
 
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
@@ -90,17 +90,19 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  sound.enable = true;
+  # sound.enable = true;
   # hardware.pulseaudio = {
   #   enable = true;
   #   support32Bit = true;
   #   package = pkgs.pulseaudioFull;
   # };
-  security.rtkit.enable = true;
+  # security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
     pulse.enable = true;
   };
 
