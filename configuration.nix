@@ -90,21 +90,21 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio = {
-  #   enable = true;
-  #   support32Bit = true;
-  #   package = pkgs.pulseaudioFull;
-  # };
-  # security.rtkit.enable = true;
-  services.pipewire = {
+  sound.enable = true;
+  hardware.pulseaudio = {
     enable = true;
-    alsa = {
-      enable = true;
-      support32Bit = true;
-    };
-    pulse.enable = true;
+    support32Bit = true;
+    package = pkgs.pulseaudioFull;
   };
+  security.rtkit.enable = true;
+  # services.pipewire = {
+  #   enable = true;
+  #   alsa = {
+  #     enable = true;
+  #     support32Bit = true;
+  #   };
+  #   pulse.enable = true;
+  # };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
