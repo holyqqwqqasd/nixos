@@ -76,6 +76,8 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  # TODO: Add google-chrome-stable
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     rxvt_unicode
     htop
@@ -83,7 +85,6 @@
     git
     google-chrome-stable
   ];
-  nixpkgs.config.allowUnfree = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
