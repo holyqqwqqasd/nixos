@@ -57,6 +57,10 @@
   #   xkbVariant = "winkeys";
   # };
 
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.zsh.enable = true;
+
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true; # so that gtk works properly
@@ -78,14 +82,6 @@
     '';
   };
 
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio = {
-    enable = true;
-    support32Bit = true;
-    package = pkgs.pulseaudioFull;
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.karen = {
     isNormalUser = true;
@@ -95,6 +91,14 @@
   };
 
   nix.trustedUsers = [ "root" "karen" ];
+
+  # Enable sound.
+  sound.enable = true;
+  hardware.pulseaudio = {
+    enable = true;
+    support32Bit = true;
+    package = pkgs.pulseaudioFull;
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -106,10 +110,6 @@
     git
     google-chrome
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.zsh.enable = true;
 
   # List services that you want to enable:
 
