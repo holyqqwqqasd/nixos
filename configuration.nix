@@ -69,6 +69,14 @@
       dmenu # Dmenu is the default in the config but i recommend wofi since its wayland native
     ];
   };
+  programs.fish = {
+    enable = true;
+    loginShellInit = ''
+      if test (id --user $USER) -ge 1000 && test (tty) = "/dev/tty1"
+        exec sway
+      end
+    '';
+  };
 
   # Enable sound.
   sound.enable = true;
@@ -81,8 +89,9 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.karen = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "sound" "video" "networkmanager" "input" "tty" ]; # Enable ‘sudo’ for the user.
-    shell="/run/current-system/sw/bin/zsh";
+    extraGroups = [ "wheel" "audio" "sound" "video" "networkmanager" "input" "tty" "sway" "docker" ]; # Enable ‘sudo’ for the user.
+    # shell="/run/current-system/sw/bin/zsh";
+    shell = pkgs.fish;
   };
 
   nix.trustedUsers = [ "root" "karen" ];
@@ -100,12 +109,7 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-  programs.zsh.enable = true;
+  # programs.zsh.enable = true;
 
   # List services that you want to enable:
 
