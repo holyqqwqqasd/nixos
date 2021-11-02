@@ -31,7 +31,6 @@
     enable = true;
     desktopManager = {
       xterm.enable = false;
-      default = "xfce";
       xfce = {
         enable = true;
         noDesktop = true;
