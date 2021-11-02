@@ -27,30 +27,32 @@
   # Enable the X11 windowing system.
   # i3wm hotkeys https://i3wm.org/docs/refcard.html
   services.xserver = {
-    enable = true;
-    autorun = false;
-    desktopManager = {
-      xterm.enable = false;
-    };
-    displayManager = {
-      startx.enable = true;
-      defaultSession = "none+i3";
-    };
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        dmenu
-        i3status
-        i3lock
-        i3blocks
-        xclip
-      ];
-      package = pkgs.i3-gaps;
-    };
-    xkbModel = "microsoft";
-    layout = "us,ru(winkeys)";
-    xkbOptions = "grp:caps_toggle,grp_led:caps";
-    xkbVariant = "winkeys";
+    #enable = true;
+    i3-gaps.enable = true;
+    default = "i3-gaps";
+    # autorun = false;
+    # desktopManager = {
+    #   xterm.enable = false;
+    # };
+    # displayManager = {
+    #   startx.enable = true;
+    #   defaultSession = "none+i3";
+    # };
+    # windowManager.i3 = {
+    #   enable = true;
+    #   extraPackages = with pkgs; [
+    #     dmenu
+    #     i3status
+    #     i3lock
+    #     i3blocks
+    #     xclip
+    #   ];
+    #   package = pkgs.i3-gaps;
+    # };
+    # xkbModel = "microsoft";
+    # layout = "us,ru(winkeys)";
+    # xkbOptions = "grp:caps_toggle,grp_led:caps";
+    # xkbVariant = "winkeys";
   };
 
   environment.pathsToLink = [ "/libexec" ];
