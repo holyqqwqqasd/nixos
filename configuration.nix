@@ -45,12 +45,15 @@
         i3blocks
         xclip
       ];
+      package = pkgs.i3-gaps;
     };
     xkbModel = "microsoft";
     layout = "us,ru(winkeys)";
     xkbOptions = "grp:caps_toggle,grp_led:caps";
     xkbVariant = "winkeys";
   };
+
+  environment.pathsToLink = [ "/libexec" ];
 
   programs.zsh.enable = true;
 
