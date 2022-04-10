@@ -91,7 +91,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim wget firefox kate mc git google-chrome tdesktop
+    vim wget firefox kate mc git google-chrome tdesktop jetbrains.rider
     (with dotnetCorePackages; combinePackages [
       sdk_3_1
       sdk_5_0
