@@ -54,6 +54,15 @@
     extraPackages = [ pkgs.mesa.drivers ];
   };
 
+  fonts.fonts = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    ubuntu_font_family
+  ];
+
   # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e";
@@ -91,7 +100,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim wget firefox kate mc git google-chrome tdesktop jetbrains.rider
+    vim
+    wget
+    kate
+    mc
+    git
+    google-chrome
+    tdesktop
+    jetbrains.rider
+
     (with dotnetCorePackages; combinePackages [
       sdk_3_1
       sdk_5_0
