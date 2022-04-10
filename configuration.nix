@@ -92,6 +92,11 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim wget firefox kate mc git google-chrome tdesktop
+    (with dotnetCorePackages; combinePackages [
+      sdk_3_1
+      sdk_5_0
+      sdk_6_0
+    ])
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
