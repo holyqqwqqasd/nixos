@@ -108,6 +108,7 @@
     google-chrome
     tdesktop
     jetbrains.rider
+    krita
 
     (with dotnetCorePackages; combinePackages [
       sdk_3_1
