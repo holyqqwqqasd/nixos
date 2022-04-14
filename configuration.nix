@@ -19,9 +19,9 @@
 
   # X11
   services.xserver = {
-  	enable = true;
-  	displayManager.sddm.enable = true;
-  	desktopManager.plasma5.enable = true;
+    enable = true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma5.enable = true;
   };
 
   # Graphics
