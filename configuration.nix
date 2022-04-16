@@ -54,9 +54,10 @@
 
   users.users.karen = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "docker" ];
   };
 
+  virtualisation.docker.enable = true;
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -69,6 +70,7 @@
     jetbrains.rider
     krita
 
+    docker-compose
     (with dotnetCorePackages; combinePackages [
       sdk_3_1
       sdk_5_0
