@@ -70,7 +70,7 @@
     tdesktop
     krita
 
-    (callPackage ./yandex-browser {})
+    (callPackage ./yandex-browser-stable {})
 
     # Development
     vscode
