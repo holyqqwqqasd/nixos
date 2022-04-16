@@ -70,6 +70,8 @@
     tdesktop
     krita
 
+    (callPackage ./yandex-browser {})
+
     # Development
     vscode
     rocketchat-desktop
