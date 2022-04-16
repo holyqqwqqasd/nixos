@@ -59,6 +59,7 @@
 
   virtualisation.docker.enable = true;
   environment.systemPackages = with pkgs; [
+    # Applications
     vim
     wget
     kate
@@ -67,9 +68,13 @@
     micro
     google-chrome
     tdesktop
-    jetbrains.rider
     krita
 
+    # Development
+    vscode
+    rocketchat-desktop
+    filezilla
+    jetbrains.rider
     docker-compose
     (with dotnetCorePackages; combinePackages [
       sdk_3_1
