@@ -69,6 +69,7 @@
     google-chrome
     tdesktop
     krita
+    ventoy-bin
 
     (callPackage ./yandex-browser-stable {})
 
