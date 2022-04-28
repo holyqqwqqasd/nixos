@@ -57,7 +57,7 @@
     extraGroups = [ "wheel" "networkmanager" "docker" ];
   };
 
-  virtualisation.docker.enable = true;
+  #virtualisation.docker.enable = true;
   environment.systemPackages = with pkgs; [
     # Applications
     vim
@@ -66,24 +66,23 @@
     mc
     git
     micro
+    ventoy-bin
     google-chrome
     tdesktop
-    krita
-    ventoy-bin
-
-    (callPackage ./yandex-browser-stable {})
+    #krita
 
     # Development
-    vscode
-    rocketchat-desktop
-    filezilla
-    jetbrains.rider
-    docker-compose
-    (with dotnetCorePackages; combinePackages [
-      sdk_3_1
-      sdk_5_0
-      sdk_6_0
-    ])
+    #vscode
+    #(callPackage ./yandex-browser-stable {})
+    #rocketchat-desktop
+    #filezilla
+    #jetbrains.rider
+    #docker-compose
+    #(with dotnetCorePackages; combinePackages [
+    #  sdk_3_1
+    #  sdk_5_0
+    #  sdk_6_0
+    #])
   ];
 
   nixpkgs.config.allowUnfree = true;
